@@ -1,0 +1,34 @@
+.menu {
+  .greetings {
+    display: flex;
+    justify-content: center;
+
+    &__text--normal {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+  .container {
+    display: flex;
+    gap: 10px;
+
+    &__item {
+      list-style: none;
+
+      &--default {
+        text-decoration: none;
+        color: #c4c4c4;
+        font-weight: normal;
+      }
+      &--active {
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        font-weight: bold;
+        text-underline-offset: 6px;
+      }
+    }
+  }
+}

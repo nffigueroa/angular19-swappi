@@ -1,0 +1,15 @@
+<section class="menu">
+  <div class="greetings">
+    <span class="greetings__text--normal">Hey there!, welcome to the starwars inventory</span>
+  </div>
+  <nav>
+    <ul class="container">
+      @for (route of routing; track route) {
+      <li class="container__item">
+        <a [routerLinkActiveOptions]="{exact: true}" [routerLink]="[route.redirectTo]"
+          routerLinkActive="container__item--active" class="container__item--default">{{ route.label }}</a>
+      </li>
+      }
+    </ul>
+  </nav>
+</section>

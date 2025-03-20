@@ -1,0 +1,28 @@
+.card {
+  max-width: 500px;
+  border: 1px dotted #eaeaea;
+  padding: 1rem;
+  border-radius: 8px;
+  background: hsla(0, 0%, 100%, 0.08);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #9b6dff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  &__label {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: hsla(0, 0%, 100%, 0.8);
+    span {
+      color: hsla(0, 0%, 100%, 0.6);
+    }
+  }
+}

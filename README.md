@@ -2,11 +2,36 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
 
-## Development server
+## Prerequisites
 
-To start a local development server, run:
+- Node.js version 20.12 or higher
+- Bun (for package management)
+
+## Installation
+
+Install dependencies using Bun:
 
 ```bash
+bun install
+```
+
+Alternatively, you can use npm:
+
+```bash
+npm install
+```
+
+## Development server
+
+To start a local development server, you have several options:
+
+```bash
+bun run start
+# or
+npm run start
+# or
+npm start
+# or
 ng serve
 ```
 

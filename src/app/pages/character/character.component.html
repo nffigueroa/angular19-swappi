@@ -1,0 +1,63 @@
+<section class="character-container">
+    <app-layout>
+        <input type="search" id="filter" [(ngModel)]="lookupText" />
+        <section class="cards-container">
+            @if(!showOnlyDetails()) {
+            @for(character of charactersList()?.results; track character) {
+            <app-card [cardInfo]="{
+                            title: character.name
+                        }" />
+
+            } @empty {
+            @if(paginationStatus() === loading) {
+            <p class="no-characters-found">Loading...</p>
+            } @else {
+            <p class="no-characters-found">No characters found</p>
+            }
+            }
+            } @else {
+            @for(character of charactersFiltered()?.result; track character) {
+            <app-card [cardInfo]="{
+                        title: character.properties.name,
+                        labels: [{
+                            name: 'Birth Year',
+                            value: character.properties.birth_year
+                        }, {
+                            name: 'Height',
+                            value: character.properties.height
+                        }, {
+                            name: 'Mass',
+                            value: character.properties.mass
+                        }, {
+                            name: 'Hair Color',
+                            value: character.properties.hair_color
+                        }, {
+                            name: 'Eye Color',
+                            value: character.properties.eye_color
+                        }, {
+                            name: 'Skin Color',
+                            value: character.properties.skin_color
+                        }, {
+                            name: 'Gender',
+                            value: character.properties.gender
+                        },]
+                        }" />
+            } @empty {
+            @if(filterStatus() === loading) {
+            <p class="no-characters-found">Loading...</p>
+            } @else {
+            <p class="no-characters-found">No characters found</p>
+            }
+            }
+            }
+        </section>
+        <!-- Pagination -->
+        @if(!showOnlyDetails() && currentPage() > 0) {
+        <div class="pagination">
+            <button (click)="previousPage()">Previous</button>
+            <span>{{ currentPage() }}</span>
+            <button (click)="nextPage()">Next</button>
+        </div>
+        }
+    </app-layout>
+</section>

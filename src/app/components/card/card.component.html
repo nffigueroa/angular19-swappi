@@ -1,0 +1,8 @@
+<div class="card">
+  <span class="card__title">
+    {{ cardInfo().title }}
+  </span>
+  @for (label of cardInfo().labels; track label){
+  <p class="card__label"><span>{{label['name']}}: </span> {{ label['value'] }}</p>
+  }
+</div>

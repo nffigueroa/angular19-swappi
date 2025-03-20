@@ -1,0 +1,28 @@
+<section class="films-container">
+  <app-layout>
+    <input type="search" id="filter" [(ngModel)]="lookupText" />
+    <section class="cards-container">
+      @for(film of filmsFiltered(); track film) {
+      <app-card [cardInfo]="{
+            title: film.properties.title,
+            labels: [{
+              name: 'Release Date',
+              value: film.properties.release_date,
+            }, {
+              name: 'Director',
+              value: film.properties.director,
+            }, {
+              name: 'Producer',
+              value: film.properties.producer,
+            },
+            {
+              name: 'Opening Crawl',
+              value: film.properties.opening_crawl,
+            }]}"
+      ></app-card>
+      } @empty {
+      <p>No films found</p>
+      }
+    </section>
+  </app-layout>
+</section>
