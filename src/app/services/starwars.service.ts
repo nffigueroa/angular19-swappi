@@ -42,12 +42,10 @@ export class StarwarsService {
   }
 
   getChracterList(page?: number): Observable<IPeopleResponse> {
-    console.log(page, 'page')
     return this.httpCLient.get<IPeopleResponse>(`https://swapi.tech/api/people?page=${page}&limit=10`);
   }
 
   getCharacterFiltered(search?: string): Observable<IPeopleDetailsResponse> {
-    console.log(search, 'search')
     return this.httpCLient.get<IPeopleDetailsResponse>(`https://swapi.tech/api/people?name=${search}`);
   }
 
